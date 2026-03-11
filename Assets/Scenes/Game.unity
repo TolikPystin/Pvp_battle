@@ -11162,6 +11162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626669133}
+  - component: {fileID: 1626669134}
   m_Layer: 0
   m_Name: spawner4
   m_TagString: Untagged
@@ -11198,6 +11199,22 @@ Transform:
   - {fileID: 1274565339}
   m_Father: {fileID: 1883079770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1626669134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626669132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9640a5b2fb93bf04cb8c77e7c89efb7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyprifab: {fileID: 8311826317436191612, guid: 131646d88aa00304da14e4e68d23002a, type: 3}
+  tagname: spawnpoint4
+  rangedistance: 2
+  timebitwvspawn: 2
 --- !u!1 &1638458834
 GameObject:
   m_ObjectHideFlags: 0
@@ -11409,19 +11426,19 @@ MonoBehaviour:
   introponel: {fileID: 623776098}
   waves:
   - spawnerenemy: {fileID: 503578910}
-    enemyTokill: 3
+    enemyTokill: 10
     door: {fileID: 1563093255}
   - spawnerenemy: {fileID: 989890431}
-    enemyTokill: 3
+    enemyTokill: 5
     door: {fileID: 511439684}
   - spawnerenemy: {fileID: 989897742}
-    enemyTokill: 3
+    enemyTokill: 7
     door: {fileID: 162764864}
   - spawnerenemy: {fileID: 903447592}
-    enemyTokill: 3
+    enemyTokill: 11
     door: {fileID: 1436197377}
-  - spawnerenemy: {fileID: 903447592}
-    enemyTokill: 3
+  - spawnerenemy: {fileID: 1626669134}
+    enemyTokill: 33
     door: {fileID: 0}
   currentwaveindex: 0
   gameactive: 0

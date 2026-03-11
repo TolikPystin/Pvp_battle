@@ -27,7 +27,7 @@ public class Gamemanager : MonoBehaviour
     public WaveData[] waves;
     public int currentwaveindex = 0;
 
-    private int hp = 1000;
+    private int hp = 100;
     private int maxhp = 100;
     private int minhp = 0;
     public bool gameactive = false;
@@ -114,7 +114,11 @@ public class Gamemanager : MonoBehaviour
         wavecompleted = false;
         if (currentwaveindex < waves.Length)
         {
-            waves[currentwaveindex].door.SetActive(true);
+            if (waves[currentwaveindex].door != null)
+            {
+                waves[currentwaveindex].door.SetActive(true);
+            }
+          
             killenemytext.text = $"убито: {currentKills} / {waves[currentwaveindex].enemyTokill}";
             Debug.Log("Волна готова" + currentwaveindex);
 
@@ -153,8 +157,13 @@ public class Gamemanager : MonoBehaviour
     {
         if (currentwaveindex < waves.Length)
         {
-            waves[currentwaveindex].door.SetActive(false);
+            if (waves[currentwaveindex].door != null)
+            {
+                waves[currentwaveindex].door.SetActive(false);
+            }
+
         }
+        
     }
 
 
