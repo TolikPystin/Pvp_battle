@@ -10,35 +10,43 @@ public class Target : MonoBehaviour
     public Slider sliderenemyhp;
     private Animator animator;
     private Gamemanager gamemanager;
-
-
-
-    
+    private bool isdead = false;
 
     void Start()
     {
-        healft = maxhealf;
+        healft = maxhealf;    
         sliderenemyhp.maxValue = maxhealf;
         sliderenemyhp.value = healft;
         animator = GetComponent<Animator>();
-        gamemanager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
+        gamemanager = FindObjectOfType<Gamemanager>();    
     }
 
     public void TakeDamage(float value) 
     {
-        
+        if (isdead) return;
+
         healft -= value;
         Debug.Log("Отняли 25 хп" + maxhealf);
         animator.SetTrigger("gethit");
 
         sliderenemyhp.value = healft;
-        if (healft == 0 )
+        if (healft <= 0 )
         {
-            animator.SetTrigger("death");
-            Destroy(gameObject, 5);
-            gamemanager.Recountenemy();
+            Dead();
 
         }
+    }
+
+    void Dead()
+    {
+        if (isdead)
+            return;
+
+        isdead = true;
+        animator.SetTrigger("death");
+        gamemanager.OnEnemyKilled();
+        
+        Destroy(gameObject, 5);
     }
 
    

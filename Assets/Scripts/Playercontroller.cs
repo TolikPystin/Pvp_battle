@@ -43,7 +43,7 @@ public class Playercontroller : MonoBehaviour
 
         if (isgrounded && velosity.y < 0)
         {
-         velosity.y = 0;
+            velosity.y = 0;
         }
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
@@ -51,20 +51,23 @@ public class Playercontroller : MonoBehaviour
         {
             Debug.Log("нажата клавиша R ");
             animator.SetTrigger("Reload");
-            
+
         }
         Vector3 moving = transform.right * horizontal + transform.forward * vertical;
         characterController.Move(moving * speed * Time.deltaTime);
-       
-        
+
+
     }
+
+
 
     public void Giveweapon()
     {
-        
-            weapon.SetActive(true);
-            animator.SetTrigger("Reload");
-        
+
+        weapon.SetActive(true);
+        animator.SetTrigger("Reload");
+        gamemanager.gameactive = true;
+
     }
 
 

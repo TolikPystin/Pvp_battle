@@ -12,6 +12,7 @@ public class Aimcamera : MonoBehaviour
     [SerializeField] private Image image;
     [SerializeField] float scale;
     private Vector3 curentsize;
+    private Gamemanager gamemanager;
 
     private Animator animator;
 
@@ -19,7 +20,7 @@ public class Aimcamera : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         curentsize = image.transform.localScale;
-
+        gamemanager = FindObjectOfType<Gamemanager>();
     }
 
 
@@ -43,6 +44,7 @@ public class Aimcamera : MonoBehaviour
             Changeimagesize(aimcamera.enabled);
         }
 
+        image.enabled = gamemanager.gameactive;
 
     }
 

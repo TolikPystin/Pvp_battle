@@ -34,6 +34,7 @@ public class Medhit : MonoBehaviour
         endposition = transform.position + new Vector3(0,delta,0);
         targetposition = endposition;
         soundsmanager = GameObject.Find("sounds").GetComponent<Soundsmanager>();
+        gamemanager = GameObject.FindObjectOfType<Gamemanager>();
     }
 
     

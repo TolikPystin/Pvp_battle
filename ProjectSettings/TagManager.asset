@@ -9,6 +9,9 @@ TagManager:
   - Weapon
   - enemy
   - startpoint
+  - spawnpoint2
+  - spawnpoint3
+  - spawnpoint4
   layers:
   - Default
   - TransparentFX
